@@ -1,0 +1,22 @@
+.time {
+    background-color: #d9f7e9;
+    padding: 32px;
+    text-align: center;
+
+}
+
+.time h3{
+    color: #212121;
+    border-bottom: solid 4px #57C278 ;
+    padding-bottom: 8px;
+    display: inline-block;
+    
+}
+
+.colaboradores{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 32px;
+    flex-wrap: wrap;
+}
+
