@@ -62,7 +62,7 @@ function App() {
         nomeDoTime={time.nome} 
         corPrimaria={time.corPrimaria} 
         corSecundaria={time.corSecundaria}
-        colaboradores={colaboradores.filter(colaborador => colaborador.time == time.nome)}
+        colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
       />)}
       <Rodape/>
     </div>

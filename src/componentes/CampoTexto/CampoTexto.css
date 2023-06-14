@@ -6,12 +6,14 @@
 .inputTexto label{
     font-weight: bold;
     display: block;
+    margin: 0.30rem ;
 }
 
 .inputTexto input{
     width: 100%;
+    
     box-sizing: border-box;
-    padding: 22px 12px;
+    padding:    1rem ;
     border: none;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
