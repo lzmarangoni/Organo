@@ -3,45 +3,45 @@ import Banner from './componentes/Banner/Banner';
 import Formulario from './componentes/Formulario';
 import Rodape from './componentes/Rodape';
 import Time from './componentes/Time';
-
+import { v4 as uuidv4 } from 'uuid';
 
 function App() {
   
   const [times, setTimes] = useState([
-    {
+    { 
+      id: uuidv4(),
       nome: 'Programação',
-      corPrimaria:'#d9f7e9' ,
-      corSecundaria: '#57C278',
+      cor: '#57C278',
     },
     {
+      id: uuidv4(),
       nome:'Front-End' ,
-      corPrimaria: '#E8F8FF',
-      corSecundaria: '#82CFFA',
+      cor: '#82CFFA',
     },
     {
+      id: uuidv4(),
       nome:'Data Science',
-      corPrimaria: '#F0F8E2',
-      corSecundaria: '#A6D157',
+      cor: '#A6D157',
     },
     {
+      id: uuidv4(),
       nome:'Devops' ,
-      corPrimaria: 'FDE7E8',
-      corSecundaria:'#E06B69' ,
+      cor:'#E06B69' ,
     },    
     {
+      id: uuidv4(),
       nome:'Ux e Design' ,
-      corPrimaria: '#FAE9F5',
-      corSecundaria: '#DB6EBF',
+      cor: '#DB6EBF',
     },
     {
+      id: uuidv4(),
       nome:'Mobile',
-      corPrimaria: '#FFF5D9',
-      corSecundaria: '#FFBA05',
+      cor: '#FFBA05',
     },
     {
+      id: uuidv4(),
       nome:'Inovação e Gestão' ,
-      corPrimaria: '#FFEEDF',
-      corSecundaria:'#FF8A29',
+      cor:'#FF8A29',
     }    
   ])
 
@@ -60,10 +60,10 @@ function App() {
   }
 
   
-function mudarCorDoTime(cor, nome){
+function mudarCorDoTime(cor, id){
   setTimes(times.map( time => {
-    if(time.nome === nome){
-      time.corSecundaria = cor
+    if(time.id === id){
+      time.cor = cor
     }return time
     }
      ))
