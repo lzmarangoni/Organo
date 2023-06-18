@@ -7,7 +7,7 @@ import Time from './componentes/Time';
 
 function App() {
   
-  const times =[
+  const [times, setTimes] = useState([
     {
       nome: 'Programação',
       corPrimaria:'#d9f7e9' ,
@@ -43,14 +43,32 @@ function App() {
       corPrimaria: '#FFEEDF',
       corSecundaria:'#FF8A29',
     }    
-  ]
+  ])
 
-  const [colaboradores, setColaboradores] = useState([]);
+  const [colaboradores, setColaboradores] = useState([
+    {
+      nome:'Luiz',
+      cargo:'Dev',
+      imagem:'https://avatars.githubusercontent.com/u/98007645?v=4',
+      time:'Mobile'
+    }
+  ]);
 
   const aoNovoColaboradorAdicionado = (colaborador) => {
     console.log(colaborador)
     setColaboradores([...colaboradores, colaborador])
   }
+
+  
+function mudarCorDoTime(cor, nome){
+  setTimes(times.map( time => {
+    if(time.nome === nome){
+      time.corSecundaria = cor
+    }return time
+    }
+     ))
+}
+
 
   return (
     <div className="App">
@@ -58,10 +76,10 @@ function App() {
       <Formulario time={times.map(time => time.nome)} aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)}/>
       
       {times.map(time => <Time 
+        mudaCor={mudarCorDoTime}
+        time={time}
         key={time.nome} 
-        nomeDoTime={time.nome} 
-        corPrimaria={time.corPrimaria} 
-        corSecundaria={time.corSecundaria}
+        
         colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
       />)}
       <Rodape/>

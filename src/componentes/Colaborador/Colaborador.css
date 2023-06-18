@@ -41,8 +41,8 @@
 
 .deletar{
     position: absolute;
-    top:0;
-    right: -0rem;
+    top:-.6rem;
+    right: -.7rem;
     border: none;
     background-color: transparent;
 }

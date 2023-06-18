@@ -1,4 +1,5 @@
 .time {
+    position: relative;
     background-color: #d9f7e9;
     padding: 32px;
     text-align: center;
@@ -20,3 +21,8 @@
     flex-wrap: wrap;
 }
 
+.colorSet{
+    position: absolute;
+    top: 2rem;
+    right: 5rem;
+}

@@ -2,16 +2,20 @@
 import Colaborador from "../Colaborador"
 import "./Time.css"
 
-const Time = (props)=>{
-    function aoDeletar(){
-        console.log("deletado")
-    }
+const Time = ({time, colaboradores, mudaCor})=>{
     return(
-        props.colaboradores.length > 0 &&
-        <section className="time" style={{backgroundColor: props.corPrimaria}}>
-            <h3 style={{borderColor: props.corSecundaria}}>{props.nomeDoTime}</h3>
+        colaboradores.length > 0 &&
+        <section className="time" style={{backgroundColor: time.corPrimaria}}>
+            <input onChange={event => mudaCor(event.target.value, time.nome)} type="color" className="colorSet"/>
+            <h3 style={{borderColor: time.corSecundaria}}>{time.nome}</h3>
             <div className="colaboradores">
-                {props.colaboradores.map(colaborador => <Colaborador corDeFundo={props.corSecundaria} key={colaborador.nome} nome={colaborador.nome} cargo={colaborador.cargo} imagem={colaborador.imagem} onClick={aoDeletar} />)}
+                {colaboradores.map(colaborador => 
+                <Colaborador 
+                    corDeFundo={time.corSecundaria} 
+                    key={colaborador.nome} 
+                    nome={colaborador.nome} 
+                    cargo={colaborador.cargo} 
+                    imagem={colaborador.imagem} />)}
             </div>
         </section>
        
